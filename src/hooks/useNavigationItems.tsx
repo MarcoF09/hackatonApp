@@ -4,19 +4,22 @@ import { styles } from '../scenes/Home/styles'
 import { useNavigation } from '@react-navigation/native'
 
 interface Props {
-  onPressRight: () => void
+  onPressRight?: () => void
   styleRight?: StyleProp<TextStyle>
-  titleRight: string
+  titleRight?: string
+  title: string
 }
 
 export const useNavigationItems = ({
   onPressRight,
   titleRight,
   styleRight,
+  title,
 }: Props) => {
   const navigation = useNavigation()
 
   navigation.setOptions({
+    title: title,
     headerRight: () => (
       <TouchableOpacity style={styles.rightContainer} onPress={onPressRight}>
         <Text style={[styles.right, styleRight]}>{titleRight}</Text>
