@@ -1,0 +1,9 @@
+**/build/*
+**/.idea/*
+**/Pods/*
+**/coverage/*
+**/dist/*
+**/node_modules/*
+**/ios/*
+**/android/*
+**/*.config.*.js

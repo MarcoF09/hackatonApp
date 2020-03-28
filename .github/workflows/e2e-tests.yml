@@ -1,0 +1,47 @@
+name: e2e-tests
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Cache node_modules
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: $GITHUB_WORKSPACE/node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+    - name: Cache Pods
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-pods
+      with:
+        path: $GITHUB_WORKSPACE/ios/Pods
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Podfile.lock') }}
+    - name: Cache e2e build
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-e2e-build
+      with:
+        path: $GITHUB_WORKSPACE/ios/build
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Podfile.lock') }}
+    - name: Install detox dependencies
+      run: brew tap wix/brew && brew install applesimutils
+    - name: Install RN dependencies
+      run: yarn install && cd ios && pod install && cd ..
+    - name: Build e2e test binary
+      run: yarn test:e2e:build
+    - name: Run e2e tests
+      run: yarn test:e2e
+    - name: Upload e2e artifacts
+      if: failure()
+      uses: actions/upload-artifact@v1
+      with:
+        name: e2e-artifaacts
+        path: ./artifacts

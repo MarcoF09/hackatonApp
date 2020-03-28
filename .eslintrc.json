@@ -1,0 +1,68 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "useJSXTextNode": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier/@typescript-eslint",
+    "prettier"
+  ],
+  "plugins": ["react-hooks"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-use-before-define": "warn",
+    "arrow-parens": ["error", "as-needed"],
+    "max-classes-per-file": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 150,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignorePattern": "^import "
+      }
+    ],
+    "no-console": "warn",
+    "no-debugger": "error",
+    "no-dupe-args": "error",
+    "no-dupe-else-if": "error",
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
+    "no-extra-boolean-cast": "warn",
+    "no-nested-ternary": "warn",
+    "no-use-before-define": "warn",
+    "no-var": "off",
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "semi": "off",
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+      }
+    ],
+    "sort-keys": [
+      "warn",
+      "asc",
+      { "caseSensitive": true, "natural": true, "minKeys": 2 }
+    ]
+  }
+}

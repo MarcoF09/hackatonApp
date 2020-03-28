@@ -1,0 +1,3 @@
+apple_id("builds@xmartlabs.com") # Your Apple email address
+itc_team_id("95780853") # App Store Connect Team ID
+team_id("6F2G55XL63") # Developer Portal Team ID

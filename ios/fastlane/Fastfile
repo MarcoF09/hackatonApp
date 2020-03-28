@@ -1,0 +1,49 @@
+default_platform(:ios)
+opt_out_usage
+
+workspace = ENV["IOS_WORKSPACE"] || "TodoAppExample.xcworkspace"
+scheme = ENV["IOS_SCHEME"] || "TodoAppExample"
+configuration = ENV["IOS_CONFIGURATION"] || "Staging"
+
+commit_message = ENV["COMMIT_MESSAGE"] || "Version Bump"
+
+desc "Setup pre build configs"
+lane :setup do
+  increment_build_number
+end
+
+desc "Push a new build to TestFlight"
+lane :build_and_upload do
+  setup
+  manage_signing
+  build
+  upload_build
+end
+
+desc "Post deploy actions"
+lane :post do
+  commit_version_bump(message: commit_message)
+end
+
+private_lane :build do
+  build_app(
+    workspace: workspace,
+    scheme: scheme,
+    configuration: configuration,
+    clean: true,
+    xcargs: "-allowProvisioningUpdates",
+  )
+end
+
+desc "Manage the whole signing shabang"
+private_lane :manage_signing do
+  automatic_code_signing(use_automatic_signing: true)
+end
+
+desc "Actually upload the build to testflight"
+private_lane :upload_build do
+  upload_to_testflight(
+    skip_submission: true,
+    skip_waiting_for_build_processing: true,
+  )
+end
