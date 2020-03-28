@@ -7,7 +7,7 @@ export const screenOptions = {
     Platform.select({ ios: <View style={{ marginLeft: 16 }} /> }),
   headerBackTitle: 'Cancel',
   headerStyle: {
-    backgroundColor: Palette.clearBlue,
+    backgroundColor: Palette.white,
   },
-  headerTintColor: Palette.white,
+  headerTintColor: Palette.black,
 }
