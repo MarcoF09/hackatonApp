@@ -1,24 +1,17 @@
 import {
   Text,
-  ListRenderItemInfo,
   SafeAreaView,
   ScrollView,
   View,
-  Image,
+  ImageBackground,
 } from 'react-native'
 import React, { useCallback } from 'react'
-import { createSelector } from 'reselect'
-import { ListFooter } from './ListFooter'
-import { RootState } from 'src/store'
 import { Route } from '../../navigation/Route'
-import { Separator } from '../../components/Separator'
 import { styles } from './styles'
 import { Todo } from '../../types/todo'
-import { TodoItem } from './TodoItem'
 import { useNavigation } from '@react-navigation/native'
-import { useNavigationItems } from '../../hooks/useNavigationItems'
-import { useSelector } from 'react-redux'
 import { Category } from '../../components/Category'
+import { useNavigationItems } from '../../hooks/useNavigationItems'
 
 const mockItem = {
   id: 1,
@@ -27,19 +20,21 @@ const mockItem = {
   description: 'description',
 }
 
-const getTodos = createSelector<RootState, Todo[], Todo[]>(
-  state => state.todos,
-  todos => todos,
-)
+// const getTodos = createSelector<RootState, Todo[], Todo[]>(
+//   state => state.todos,
+//   todos => todos,
+// )
 
 export const Home = () => {
   const navigation = useNavigation()
   useNavigationItems({
-    onPressRight: () => navigation.navigate(Route.NEW_TODO),
-    styleRight: {
-      fontSize: 30,
-    },
-    titleRight: '+',
+    // onPressRight: () => navigation.navigate(Route.NEW_TODO),
+    // styleRight: {
+    //   fontSize: 30,
+    //   color: Palette.black,
+    // },
+    // titleRight: '+',
+    title: 'Inicio',
   })
   const onPressItem = useCallback(
     (todo: Todo) => () => {
@@ -49,23 +44,55 @@ export const Home = () => {
     },
     [navigation],
   )
-  const todos = useSelector(getTodos)
+  // const todos = useSelector(getTodos)
 
-  const renderItem = ({ item }: ListRenderItemInfo<Todo>) => (
-    <TodoItem {...item} onPress={onPressItem(item)} />
-  )
+  // const renderItem = ({ item }: ListRenderItemInfo<Todo>) => (
+  //   <TodoItem {...item} onPress={onPressItem(item)} />
+  // )
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <FlatList
-        keyExtractor={item => item.id.toString()}
-        data={todos}
-        ItemSeparatorComponent={Separator}
-        renderItem={renderItem}
-        testID="TODO_LIST"
-      /> */}
-      {/* <ListFooter /> */}
       <ScrollView scrollEventThrottle={16}>
+        <View>
+          <ImageBackground
+            source={require('../../assets/home.jpg')}
+            style={{ width: '100%', height: 150 }}
+          >
+            <View
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 24,
+                  fontWeight: '700',
+                  paddingHorizontal: 20,
+                  color: 'white',
+                }}
+              >
+                Feria artesanal online
+              </Text>
+              <Text
+                style={{
+                  fontSize: 24,
+                  fontWeight: '700',
+                  paddingHorizontal: 20,
+                  color: 'white',
+                  textAlign: 'center',
+                }}
+              >
+                Compre productos con historias
+              </Text>
+            </View>
+          </ImageBackground>
+        </View>
         <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
           <Text
             style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}

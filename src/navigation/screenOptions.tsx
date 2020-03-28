@@ -5,7 +5,7 @@ import React from 'react'
 export const screenOptions = {
   headerBackImage: () =>
     Platform.select({ ios: <View style={{ marginLeft: 16 }} /> }),
-  headerBackTitle: 'Cancel',
+  headerBackTitle: 'Atras',
   headerStyle: {
     backgroundColor: Palette.white,
   },

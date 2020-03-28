@@ -20,12 +20,7 @@ export const Category = ({ imageUri, name, onPress }: OuterProps) => (
       }}
     >
       <View style={{ flex: 2 }}>
-        <Image
-          source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
-          }}
-          style={{ flex: 1, resizeMode: 'cover' }}
-        />
+        <Image source={imageUri} style={{ flex: 1, resizeMode: 'cover' }} />
       </View>
       <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
         <Text>{name}</Text>
