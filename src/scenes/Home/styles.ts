@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
   categoryContainer: { flex: 1, backgroundColor: 'white', paddingTop: 20 },
   categoryTitle: { fontSize: 24, fontWeight: '700', paddingHorizontal: 20 },
+  categoriesSubContainer: { height: 130, marginTop: 20 },
   container: {
     alignSelf: 'stretch',
     backgroundColor: Palette.background,
@@ -23,6 +24,7 @@ export const styles = StyleSheet.create({
     fontWeight: '700',
     paddingHorizontal: 20,
     color: 'white',
+    textAlign: 'center',
   },
   right: {
     color: Palette.white,
@@ -31,4 +33,5 @@ export const styles = StyleSheet.create({
   rightContainer: {
     marginRight: 8,
   },
+  imageContainer: { width: '100%', height: 150 },
 })

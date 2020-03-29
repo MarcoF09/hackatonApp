@@ -49,7 +49,7 @@ export const Home = () => {
         <View>
           <ImageBackground
             source={require('../../assets/home.jpg')}
-            style={{ width: '100%', height: 150 }}
+            style={styles.imageContainer}
           >
             <View style={styles.headerTextContainer}>
               <Text style={styles.headerText}>Feria artesanal online</Text>
