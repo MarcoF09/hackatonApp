@@ -61,8 +61,8 @@ export const Detail = () => {
         <View style={styles.rowContainer}>
           <Text style={styles.boldText}>Productos del tipo: </Text>
           <Text style={styles.commonText}>
-            {get(company, 'tags', []).length > 0
-              ? get(company, 'tags', []).map(
+            {company!.tags.length > 0
+              ? company!.tags.map(
                   (tag: string, index: number, array: string[]) => (
                     <>
                       <Text>{tag}</Text>

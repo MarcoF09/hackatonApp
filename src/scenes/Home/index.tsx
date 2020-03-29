@@ -54,7 +54,7 @@ export const Home = () => {
           <Image source={searchImage} style={styles.searchBarImage} />
           <TextInput
             underlineColorAndroid="transparent"
-            placeholder="Busca"
+            placeholder="Buscar "
             placeholderTextColor="grey"
             style={styles.searchTextInput}
           />
@@ -66,7 +66,7 @@ export const Home = () => {
           >
             <View style={styles.headerTextContainer}>
               <Text style={styles.headerText}>
-                Productos únicos, con un sabor diferente! ¡Apoye a los
+                Productos únicos con un sabor diferente! ¡Apoye a los
                 productores artesanales! ¡Unete a la communidad!
               </Text>
             </View>

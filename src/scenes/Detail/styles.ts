@@ -36,5 +36,5 @@ export const styles = StyleSheet.create({
     fontSize: 36,
     marginBottom: 8,
   },
-  rowContainer: { flexDirection: 'row' },
+  rowContainer: { flexDirection: 'row', paddingVertical: 5 },
 })
