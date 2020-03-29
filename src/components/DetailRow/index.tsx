@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Linking } from 'react-native'
 import { styles } from './styles'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export interface OuterProps {
   leftText: string
@@ -10,10 +11,14 @@ export interface OuterProps {
 export const DetailRow = ({ leftText, rightText }: OuterProps) => (
   <View style={styles.rowContainer}>
     <View style={styles.leftContainer}>
-      <Text style={styles.commonText}>{leftText}</Text>
+      <TouchableOpacity onPress={() => Linking.openURL(leftText)}>
+        <Text style={styles.commonText}>{leftText}</Text>
+      </TouchableOpacity>
     </View>
     <View style={styles.rightContainer}>
-      <Text style={styles.commonText}>{rightText}</Text>
+      <TouchableOpacity onPress={() => Linking.openURL(rightText)}>
+        <Text style={styles.commonText}>{rightText}</Text>
+      </TouchableOpacity>
     </View>
   </View>
 )
