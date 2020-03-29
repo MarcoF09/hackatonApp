@@ -1,29 +1,30 @@
+import React, { useCallback } from 'react'
 import {
   Text,
   SafeAreaView,
   ScrollView,
   View,
   ImageBackground,
+  SectionList,
+  FlatList,
 } from 'react-native'
-import React, { useCallback } from 'react'
 import { Route } from '../../navigation/Route'
 import { styles } from './styles'
-import { Todo } from '../../types/todo'
 import { useNavigation } from '@react-navigation/native'
-import { Category } from '../../components/Category'
 import { useNavigationItems } from '../../hooks/useNavigationItems'
+import { Company } from '../../types/company'
+import { createSelector } from 'reselect'
+import { RootState } from '../../store'
+import { useSelector } from 'react-redux'
+import { useRenderSectionHeader } from './hooks/useRenderSectionHeader'
+import { useRenderItem } from './hooks/useRenderItem'
+import { useSections } from './hooks/useSections'
+import { Separator } from '../../components/Separator'
 
-const mockItem = {
-  id: 1,
-  completed: false,
-  title: 'todo',
-  description: 'description',
-}
-
-// const getTodos = createSelector<RootState, Todo[], Todo[]>(
-//   state => state.todos,
-//   todos => todos,
-// )
+const getCompanies = createSelector<RootState, Company[], Company[]>(
+  state => state.companies,
+  companies => companies,
+)
 
 export const Home = () => {
   const navigation = useNavigation()
@@ -31,18 +32,18 @@ export const Home = () => {
     title: 'Inicio',
   })
   const onPressItem = useCallback(
-    (todo: Todo) => () => {
+    (company: Company) => () => {
       navigation.navigate(Route.DETAIL, {
-        todoId: todo.id,
+        companyId: company.id,
       })
     },
     [navigation],
   )
-  // const todos = useSelector(getTodos)
+  const companies = useSelector(getCompanies)
+  const { renderSectionHeader } = useRenderSectionHeader()
+  const { renderFlatListItem } = useRenderItem(onPressItem)
+  const { getSections } = useSections(companies)
 
-  // const renderItem = ({ item }: ListRenderItemInfo<Todo>) => (
-  //   <TodoItem {...item} onPress={onPressItem(item)} />
-  // )
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView scrollEventThrottle={16}>
@@ -59,86 +60,21 @@ export const Home = () => {
             </View>
           </ImageBackground>
         </View>
-        <View style={styles.categoryContainer}>
-          <Text style={styles.categoryTitle}>Comidas</Text>
-
-          <View style={styles.categoriesSubContainer}>
-            <ScrollView
+        <SectionList
+          horizontal={false}
+          renderItem={({ item }) => (
+            <FlatList
+              data={item}
               horizontal={true}
+              renderItem={renderFlatListItem}
               showsHorizontalScrollIndicator={false}
-            >
-              <Category
-                imageUri={require('../../assets/home.jpg')}
-                name="Home"
-                onPress={onPressItem(mockItem)}
-              />
-              <Category
-                imageUri={require('../../assets/experiences.jpg')}
-                name="Experiences"
-                onPress={onPressItem(mockItem)}
-              />
-              <Category
-                imageUri={require('../../assets/restaurant.jpg')}
-                name="Resturant"
-                onPress={onPressItem(mockItem)}
-              />
-            </ScrollView>
-          </View>
-        </View>
-
-        <View style={styles.categoryContainer}>
-          <Text style={styles.categoryTitle}>Cuidado Personal</Text>
-
-          <View style={styles.categoriesSubContainer}>
-            <ScrollView
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-            >
-              <Category
-                imageUri={require('../../assets/home.jpg')}
-                name="Home"
-                onPress={onPressItem(mockItem)}
-              />
-              <Category
-                imageUri={require('../../assets/experiences.jpg')}
-                name="Experiences"
-                onPress={onPressItem(mockItem)}
-              />
-              <Category
-                imageUri={require('../../assets/restaurant.jpg')}
-                name="Resturant"
-                onPress={onPressItem(mockItem)}
-              />
-            </ScrollView>
-          </View>
-        </View>
-
-        <View style={styles.categoryContainer}>
-          <Text style={styles.categoryTitle}>Otros negocios</Text>
-
-          <View style={styles.categoriesSubContainer}>
-            <ScrollView
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-            >
-              <Category
-                imageUri={require('../../assets/home.jpg')}
-                name="Home"
-                onPress={onPressItem(mockItem)}
-              />
-              <Category
-                imageUri={require('../../assets/experiences.jpg')}
-                name="Experiences"
-                onPress={onPressItem(mockItem)}
-              />
-              <Category
-                imageUri={require('../../assets/restaurant.jpg')}
-                name="Resturant"
-                onPress={onPressItem(mockItem)}
-              />
-            </ScrollView>
-          </View>
-        </View>
+            />
+          )}
+          renderSectionHeader={renderSectionHeader}
+          ListEmptyComponent={<Separator />}
+          ListHeaderComponent={<Separator />}
+          sections={getSections().sections}
+        />
       </ScrollView>
     </SafeAreaView>
   )

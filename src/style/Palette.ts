@@ -3,6 +3,7 @@ export const Palette = {
   black: '#000000',
   clearBlue: '#1f86ff',
   gray: '#959595',
+  clearGray: '#dddddd',
   pink: '#ff197b',
   separator: '#f0f0f0',
   white: '#ffffff',

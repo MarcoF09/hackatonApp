@@ -1,9 +1,9 @@
 import { createStore } from 'redux'
 import { rootReducer } from './reducers'
-import { TodosState } from './reducers/todos'
+import { CompaniesState } from './reducers/companies'
 
 export interface RootState {
-  todos: TodosState
+  companies: CompaniesState
 }
 
 export const store = createStore(rootReducer)

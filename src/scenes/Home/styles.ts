@@ -2,7 +2,11 @@ import { Palette } from '../../style/Palette'
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-  categoryContainer: { flex: 1, backgroundColor: 'white', paddingTop: 20 },
+  categoryContainer: {
+    flex: 1,
+    backgroundColor: 'white',
+    paddingVertical: 20,
+  },
   categoryTitle: { fontSize: 24, fontWeight: '700', paddingHorizontal: 20 },
   categoriesSubContainer: { height: 130, marginTop: 20 },
   container: {
