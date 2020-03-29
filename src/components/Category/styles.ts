@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: Palette.clearGray,
   },
-  image: { flex: 1, resizeMode: 'cover' },
+  image: { flex: 1, resizeMode: 'cover', height: 130, width: 130 },
   imageContainer: { flex: 2 },
   textContainer: { flex: 1, paddingLeft: 10, paddingTop: 10 },
   tagsContainer: {

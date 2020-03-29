@@ -1,5 +1,10 @@
 import { ImageSourcePropType } from 'react-native'
 
+export interface ImageDetail {
+  description: string
+  image: ImageSourcePropType
+}
+
 export interface Company {
   id: number
   name: string
@@ -13,4 +18,9 @@ export interface Company {
   tags: strings[]
   image: ImageSourcePropType
   description: string
+  email?: string
+  type: string
+  deliveryRange?: string
+  deliveryZone?: string
+  imagesDetail: ImageDetail[]
 }
