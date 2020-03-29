@@ -1,30 +1,37 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, ScrollView } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { styles } from './styles'
 
 export interface OuterProps {
   imageUri: any
   name: string
   onPress: () => void
+  tags: string[]
 }
 
-export const Category = ({ imageUri, name, onPress }: OuterProps) => (
+export const Category = ({ imageUri, name, onPress, tags }: OuterProps) => (
   <TouchableOpacity onPress={onPress}>
-    <View
-      style={{
-        height: 130,
-        width: 130,
-        marginLeft: 20,
-        borderWidth: 0.5,
-        borderColor: '#dddddd',
-      }}
-    >
-      <View style={{ flex: 2 }}>
-        <Image source={imageUri} style={{ flex: 1, resizeMode: 'cover' }} />
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image source={imageUri} style={styles.image} />
       </View>
-      <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
+      <View style={styles.categoryName}>
         <Text>{name}</Text>
       </View>
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        style={styles.basicContainer}
+      >
+        <View style={styles.tagsContainer}>
+          {tags.map(tag => (
+            <View style={styles.tagContainer}>
+              <Text style={styles.tagText}>{tag}</Text>
+            </View>
+          ))}
+        </View>
+      </ScrollView>
     </View>
   </TouchableOpacity>
 )

@@ -20,6 +20,10 @@ const mockItem = {
   description: 'description',
 }
 
+const tags1 = ['jabones', 'shampoo']
+const tags2 = ['congelados', 'postres', 'eventos']
+const tags3 = ['tortas', 'dulces', 'saladitos']
+
 // const getTodos = createSelector<RootState, Todo[], Todo[]>(
 //   state => state.todos,
 //   todos => todos,
@@ -70,16 +74,19 @@ export const Home = () => {
               <Category
                 imageUri={require('../../assets/home.jpg')}
                 name="Home"
+                tags={tags1}
                 onPress={onPressItem(mockItem)}
               />
               <Category
                 imageUri={require('../../assets/experiences.jpg')}
                 name="Experiences"
+                tags={tags2}
                 onPress={onPressItem(mockItem)}
               />
               <Category
                 imageUri={require('../../assets/restaurant.jpg')}
                 name="Resturant"
+                tags={tags3}
                 onPress={onPressItem(mockItem)}
               />
             </ScrollView>
@@ -97,16 +104,19 @@ export const Home = () => {
               <Category
                 imageUri={require('../../assets/home.jpg')}
                 name="Home"
+                tags={tags1}
                 onPress={onPressItem(mockItem)}
               />
               <Category
                 imageUri={require('../../assets/experiences.jpg')}
                 name="Experiences"
+                tags={tags2}
                 onPress={onPressItem(mockItem)}
               />
               <Category
                 imageUri={require('../../assets/restaurant.jpg')}
                 name="Resturant"
+                tags={tags3}
                 onPress={onPressItem(mockItem)}
               />
             </ScrollView>
@@ -124,16 +134,19 @@ export const Home = () => {
               <Category
                 imageUri={require('../../assets/home.jpg')}
                 name="Home"
+                tags={tags1}
                 onPress={onPressItem(mockItem)}
               />
               <Category
                 imageUri={require('../../assets/experiences.jpg')}
                 name="Experiences"
+                tags={tags2}
                 onPress={onPressItem(mockItem)}
               />
               <Category
                 imageUri={require('../../assets/restaurant.jpg')}
                 name="Resturant"
+                tags={tags3}
                 onPress={onPressItem(mockItem)}
               />
             </ScrollView>
