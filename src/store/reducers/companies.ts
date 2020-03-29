@@ -21,6 +21,8 @@ export const initialState: CompaniesState = [
     category: 'Comidas',
     image: require('../../assets/home.jpg'),
     tags: tags1,
+    description:
+      'Esto es una descripcion larga larga larga, ptm porque no puse lorem ipsum',
   },
   {
     id: 2,
@@ -34,6 +36,8 @@ export const initialState: CompaniesState = [
     category: 'Cuidado Personal',
     image: require('../../assets/experiences.jpg'),
     tags: tags2,
+    description:
+      'Esto es una descripcion larga larga larga, ptm porque no puse lorem ipsum',
   },
   {
     id: 3,
@@ -47,6 +51,8 @@ export const initialState: CompaniesState = [
     category: 'Cuidado Personal',
     image: require('../../assets/experiences.jpg'),
     tags: tags2,
+    description:
+      'Esto es una descripcion larga larga larga, ptm porque no puse lorem ipsum',
   },
   {
     id: 4,
@@ -60,6 +66,8 @@ export const initialState: CompaniesState = [
     category: 'Otros Negocios',
     image: require('../../assets/restaurant.jpg'),
     tags: tags3,
+    description:
+      'Esto es una descripcion larga larga larga, ptm porque no puse lorem ipsum',
   },
   {
     id: 5,
@@ -73,6 +81,8 @@ export const initialState: CompaniesState = [
     category: 'Otros Negocios',
     image: require('../../assets/restaurant.jpg'),
     tags: tags3,
+    description:
+      'Esto es una descripcion larga larga larga, ptm porque no puse lorem ipsum',
   },
   {
     id: 6,
@@ -86,6 +96,8 @@ export const initialState: CompaniesState = [
     category: 'Comidas',
     image: require('../../assets/home.jpg'),
     tags: tags1,
+    description:
+      'Esto es una descripcion larga larga larga, ptm porque no puse lorem ipsum',
   },
   {
     id: 7,
@@ -99,6 +111,8 @@ export const initialState: CompaniesState = [
     category: 'Cuidado Personal',
     image: require('../../assets/experiences.jpg'),
     tags: tags2,
+    description:
+      'Esto es una descripcion larga larga larga, ptm porque no puse lorem ipsum',
   },
   {
     id: 8,
@@ -112,6 +126,8 @@ export const initialState: CompaniesState = [
     category: 'Comidas',
     image: require('../../assets/home.jpg'),
     tags: tags1,
+    description:
+      'Esto es una descripcion larga larga larga, ptm porque no puse lorem ipsum',
   },
   {
     id: 9,
@@ -125,6 +141,8 @@ export const initialState: CompaniesState = [
     category: 'Otros Negocios',
     image: require('../../assets/restaurant.jpg'),
     tags: tags3,
+    description:
+      'Esto es una descripcion larga larga larga, ptm porque no puse lorem ipsum',
   },
 ]
 

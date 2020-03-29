@@ -12,4 +12,5 @@ export interface Company {
   category: string
   tags: strings[]
   image: ImageSourcePropType
+  description: string
 }
