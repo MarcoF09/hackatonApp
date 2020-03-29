@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     width: 130,
     marginLeft: 20,
     borderWidth: 0.5,
-    borderColor: '#dddddd',
+    borderColor: Palette.clearGray,
   },
   image: { flex: 1, resizeMode: 'cover' },
   imageContainer: { flex: 2 },

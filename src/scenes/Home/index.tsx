@@ -8,10 +8,10 @@ import {
 import React, { useCallback } from 'react'
 import { Route } from '../../navigation/Route'
 import { styles } from './styles'
-import { Todo } from '../../types/todo'
 import { useNavigation } from '@react-navigation/native'
 import { Category } from '../../components/Category'
 import { useNavigationItems } from '../../hooks/useNavigationItems'
+import { Companies } from 'src/types/companies'
 
 const mockItem = {
   id: 1,
@@ -35,9 +35,9 @@ export const Home = () => {
     title: 'Inicio',
   })
   const onPressItem = useCallback(
-    (todo: Todo) => () => {
+    (company: Companies) => () => {
       navigation.navigate(Route.DETAIL, {
-        todoId: todo.id,
+        companyId: company.id,
       })
     },
     [navigation],
