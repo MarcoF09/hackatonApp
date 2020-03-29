@@ -41,11 +41,13 @@ export const Detail = () => {
           />
           <DetailRow
             leftText={get(company, 'phone', 'Phone por defecto')}
-            rightText={get(company, 'instagramUrl', 'Url por defecto')}
+            rightText={'Instagram'}
+            rightUrl={get(company, 'instagramUrl', 'https://instagram.com')}
           />
           <DetailRow
             leftText={get(company, 'whatsapp', 'Whatsapp por defecto')}
-            rightText={get(company, 'facebookUrl', 'Facebook por defecto')}
+            rightText={'Facebook'}
+            rightUrl={get(company, 'facebookUrl', 'https://facebook.com')}
           />
         </>
       </View>
@@ -57,7 +59,7 @@ export const Detail = () => {
           </Text>
         </View>
         <View style={styles.rowContainer}>
-          <Text style={styles.boldText}>Delivery en: </Text>
+          <Text style={styles.boldText}>Productos del tipo: </Text>
           <Text style={styles.commonText}>
             {get(company, 'tags', []).length > 0
               ? get(company, 'tags', []).map(
@@ -71,21 +73,27 @@ export const Detail = () => {
               : 'Sin tags'}
           </Text>
         </View>
+        {get(company, 'type', 'small_business') === 'small_business' ? (
+          <View style={styles.rowContainer}>
+            <Text style={styles.boldText}>Rango de delivery: </Text>
+            <Text style={styles.commonText}>
+              {get(company, 'deliveryRange', 'no especificado')}
+            </Text>
+          </View>
+        ) : (
+          <View style={styles.rowContainer}>
+            <Text style={styles.boldText}>Zona de delivery: </Text>
+            <Text style={styles.commonText}>
+              {get(company, 'deliveryZone', 'no especificado')}
+            </Text>
+          </View>
+        )}
       </View>
       <Separator />
       <ScrollView scrollEventThrottle={16}>
-        <ImageItem
-          imageUri={require('../../assets/home.jpg')}
-          text="Descripcion"
-        />
-        <ImageItem
-          imageUri={require('../../assets/restaurant.jpg')}
-          text="Descripcion"
-        />
-        <ImageItem
-          imageUri={require('../../assets/experiences.jpg')}
-          text="Descripcion"
-        />
+        {company?.imagesDetail.map(image => (
+          <ImageItem imageUri={image.image} text={image.description} />
+        ))}
       </ScrollView>
     </SafeAreaView>
   )

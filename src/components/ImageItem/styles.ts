@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { Palette } from '../../style/Palette'
 
 export const styles = StyleSheet.create({
   imageContainer: { height: 150, margin: 15 },
@@ -17,5 +18,8 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     color: 'white',
     textAlign: 'center',
+    textShadowColor: Palette.gray,
+    textShadowOffset: { width: 3, height: 3 },
+    textShadowRadius: 1,
   },
 })
