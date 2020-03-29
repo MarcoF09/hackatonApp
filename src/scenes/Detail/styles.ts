@@ -7,9 +7,6 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
   },
-  completed: {
-    fontSize: 30,
-  },
   container: {
     alignSelf: 'stretch',
     backgroundColor: Palette.background,
@@ -29,22 +26,10 @@ export const styles = StyleSheet.create({
     fontStyle: 'italic',
     marginBottom: 8,
   },
-  footer: {
-    alignItems: 'center',
-    backgroundColor: Palette.white,
-    height: 80,
-    justifyContent: 'center',
-    width: '100%',
-  },
   header: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  markAs: {
-    color: Palette.pink,
-    fontSize: 14,
-    fontWeight: '500',
   },
   title: {
     color: Palette.black,
