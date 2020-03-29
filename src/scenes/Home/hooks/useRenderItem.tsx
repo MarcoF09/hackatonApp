@@ -1,5 +1,5 @@
 import React, { ReactElement, useCallback } from 'react'
-import { ListRenderItemInfo, SectionListRenderItemInfo } from 'react-native'
+import { ListRenderItemInfo } from 'react-native'
 import { Company } from '../../../types/company'
 import { Category } from '../../../components/Category'
 

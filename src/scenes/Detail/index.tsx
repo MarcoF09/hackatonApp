@@ -1,8 +1,6 @@
 import React, { useMemo } from 'react'
 import { SafeAreaView, Text, View, ScrollView } from 'react-native'
-// import { useDispatch, useSelector } from 'react-redux'
 import { createSelector } from 'reselect'
-// import { RootState } from 'src/store'
 import { Separator } from '../../components/Separator'
 import { styles } from './styles'
 import { DetailRow } from '../../components/DetailRow'
@@ -12,8 +10,6 @@ import { RootState } from '../../store'
 import { Company } from '../../types/company'
 import { useSelector } from 'react-redux'
 import { get } from 'lodash'
-
-// import { toggleTodo } from '../../store/actions/todos'
 
 const makeCompaniesIdSelection = () =>
   createSelector<RootState, number, Company[], number, Company | undefined>(
