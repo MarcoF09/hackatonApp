@@ -61,13 +61,13 @@ export const Home = () => {
         </View>
         <View>
           <ImageBackground
-            source={require('../../assets/home.jpg')}
+            source={require('../../assets/header.jpg')}
             style={styles.imageContainer}
           >
             <View style={styles.headerTextContainer}>
-              <Text style={styles.headerText}>Feria artesanal online</Text>
               <Text style={styles.headerText}>
-                Compre productos con historias
+                Productos únicos, con un sabor diferente! ¡Apoye a los
+                productores artesanales! ¡Unete a la communidad!
               </Text>
             </View>
           </ImageBackground>

@@ -29,6 +29,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     color: 'white',
     textAlign: 'center',
+    textShadowColor: Palette.gray,
+    textShadowOffset: { width: 3, height: 3 },
+    textShadowRadius: 1,
   },
   right: {
     color: Palette.white,
