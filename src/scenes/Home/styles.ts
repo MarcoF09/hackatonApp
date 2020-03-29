@@ -37,5 +37,22 @@ export const styles = StyleSheet.create({
   rightContainer: {
     marginRight: 8,
   },
+  searchBarContainer: {
+    flexDirection: 'row',
+    padding: 10,
+    backgroundColor: Palette.white,
+    marginHorizontal: 20,
+    marginVertical: 10,
+    shadowOffset: { width: 0, height: 0 },
+    shadowColor: Palette.black,
+    shadowOpacity: 0.2,
+    elevation: 1,
+  },
+  searchBarImage: { marginRight: 10, tintColor: Palette.black },
+  searchTextInput: {
+    flex: 1,
+    fontWeight: '700',
+    backgroundColor: Palette.white,
+  },
   imageContainer: { width: '100%', height: 150 },
 })

@@ -5,8 +5,10 @@ import {
   ScrollView,
   View,
   ImageBackground,
+  Image,
   SectionList,
   FlatList,
+  TextInput,
 } from 'react-native'
 import { Route } from '../../navigation/Route'
 import { styles } from './styles'
@@ -20,6 +22,7 @@ import { useRenderSectionHeader } from './hooks/useRenderSectionHeader'
 import { useRenderItem } from './hooks/useRenderItem'
 import { useSections } from './hooks/useSections'
 import { Separator } from '../../components/Separator'
+import searchImage from '../../assets/search.png'
 
 const getCompanies = createSelector<RootState, Company[], Company[]>(
   state => state.companies,
@@ -47,6 +50,15 @@ export const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView scrollEventThrottle={16}>
+        <View style={styles.searchBarContainer}>
+          <Image source={searchImage} style={styles.searchBarImage} />
+          <TextInput
+            underlineColorAndroid="transparent"
+            placeholder="Busca"
+            placeholderTextColor="grey"
+            style={styles.searchTextInput}
+          />
+        </View>
         <View>
           <ImageBackground
             source={require('../../assets/home.jpg')}
