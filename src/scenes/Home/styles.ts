@@ -48,7 +48,11 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     elevation: 1,
   },
-  searchBarImage: { marginRight: 10, tintColor: Palette.black },
+  searchBarImage: {
+    marginRight: 10,
+    alignSelf: 'center',
+    tintColor: Palette.black,
+  },
   searchTextInput: {
     flex: 1,
     fontWeight: '700',
