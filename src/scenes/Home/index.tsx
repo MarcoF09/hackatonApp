@@ -54,7 +54,7 @@ export const Home = () => {
           <Image source={searchImage} style={styles.searchBarImage} />
           <TextInput
             underlineColorAndroid="transparent"
-            placeholder="Busca"
+            placeholder="Buscar "
             placeholderTextColor="grey"
             style={styles.searchTextInput}
           />
