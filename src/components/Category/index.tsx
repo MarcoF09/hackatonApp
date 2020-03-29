@@ -17,7 +17,7 @@ export const Category = ({ imageUri, name, onPress, tags }: OuterProps) => (
         <Image source={imageUri} style={styles.image} />
       </View>
       <View style={styles.categoryName}>
-        <Text>{name}</Text>
+        <Text style={styles.boldText}>{name}</Text>
       </View>
       <ScrollView
         horizontal={true}
@@ -25,9 +25,12 @@ export const Category = ({ imageUri, name, onPress, tags }: OuterProps) => (
         style={styles.basicContainer}
       >
         <View style={styles.tagsContainer}>
-          {tags.map(tag => (
-            <View style={styles.tagContainer}>
-              <Text style={styles.tagText}>{tag}</Text>
+          {tags.map((tag, index, array) => (
+            <View>
+              <Text style={styles.tagText}>
+                {tag}
+                {array.length - 1 > index ? ', ' : ''}
+              </Text>
             </View>
           ))}
         </View>

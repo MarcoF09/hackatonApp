@@ -4,13 +4,13 @@ import { Company } from '../../types/company'
 
 export type CompaniesState = Company[]
 
-const delicatezzenTags = ['tortas', 'dulces', 'saladitos']
-const mocaTags = ['pastas', 'congelados', 'postres']
-const adriTags = ['Tartas', 'Vegetariano', 'Vergano', 'Dulces']
-const naturalProductosTags = ['jabones', 'shampoo']
-const padarseTags = ['dulces']
-const elkaTags = ['Viandas', 'vegetariano', 'congelados']
-const greenTags = ['Hamburguesas', 'vegana', 'vegetariana']
+const delicatezzenTags = ['Tortas', 'Dulces', 'Saladitos']
+const mocaTags = ['Pastas', 'Congelados', 'Postres']
+const adriTags = ['Tartas', 'Vegetariano', 'Vergano']
+const naturalProductosTags = ['Jabones', 'Shampoo']
+const padarseTags = ['Dulces']
+const elkaTags = ['Viandas', 'Vegetariano', 'Congelados']
+const greenTags = ['Hamburguesas', 'Vegana', 'Vegetariana']
 
 export const initialState: CompaniesState = [
   {
