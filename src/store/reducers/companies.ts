@@ -1,10 +1,14 @@
 import { Actions } from '../actions/companies'
 import { AnyAction } from 'redux'
-import { Companies } from 'src/types/companies'
+import { Company } from 'src/types/company'
 
-export type CompaniesState = Companies[]
+export type CompaniesState = Company[]
 
-const initialState: CompaniesState = [
+const tags1 = ['jabones', 'shampoo']
+const tags2 = ['congelados', 'postres', 'eventos']
+const tags3 = ['tortas', 'dulces', 'saladitos']
+
+export const initialState: CompaniesState = [
   {
     id: 1,
     name: 'Nombre 1',
@@ -15,6 +19,8 @@ const initialState: CompaniesState = [
     instagramUrl: 'www.instagram.com',
     facebookUrl: 'www.facebook.com',
     category: 'Comidas',
+    image: require('../../assets/home.jpg'),
+    tags: tags1,
   },
   {
     id: 2,
@@ -26,6 +32,8 @@ const initialState: CompaniesState = [
     instagramUrl: 'www.instagram.com',
     facebookUrl: 'www.facebook.com',
     category: 'Cuidado Personal',
+    image: require('../../assets/experiences.jpg'),
+    tags: tags2,
   },
   {
     id: 3,
@@ -37,6 +45,8 @@ const initialState: CompaniesState = [
     instagramUrl: 'www.instagram.com',
     facebookUrl: 'www.facebook.com',
     category: 'Cuidado Personal',
+    image: require('../../assets/experiences.jpg'),
+    tags: tags2,
   },
   {
     id: 4,
@@ -48,6 +58,8 @@ const initialState: CompaniesState = [
     instagramUrl: 'www.instagram.com',
     facebookUrl: 'www.facebook.com',
     category: 'Otros Negocios',
+    image: require('../../assets/restaurant.jpg'),
+    tags: tags3,
   },
   {
     id: 5,
@@ -59,6 +71,8 @@ const initialState: CompaniesState = [
     instagramUrl: 'www.instagram.com',
     facebookUrl: 'www.facebook.com',
     category: 'Otros Negocios',
+    image: require('../../assets/restaurant.jpg'),
+    tags: tags3,
   },
   {
     id: 6,
@@ -70,6 +84,8 @@ const initialState: CompaniesState = [
     instagramUrl: 'www.instagram.com',
     facebookUrl: 'www.facebook.com',
     category: 'Comidas',
+    image: require('../../assets/home.jpg'),
+    tags: tags1,
   },
   {
     id: 7,
@@ -81,6 +97,8 @@ const initialState: CompaniesState = [
     instagramUrl: 'www.instagram.com',
     facebookUrl: 'www.facebook.com',
     category: 'Cuidado Personal',
+    image: require('../../assets/experiences.jpg'),
+    tags: tags2,
   },
   {
     id: 8,
@@ -91,7 +109,9 @@ const initialState: CompaniesState = [
     disponibility: '24/7',
     instagramUrl: 'www.instagram.com',
     facebookUrl: 'www.facebook.com',
-    category: 'Cuidado Personal',
+    category: 'Comidas',
+    image: require('../../assets/home.jpg'),
+    tags: tags1,
   },
   {
     id: 9,
@@ -103,6 +123,8 @@ const initialState: CompaniesState = [
     instagramUrl: 'www.instagram.com',
     facebookUrl: 'www.facebook.com',
     category: 'Otros Negocios',
+    image: require('../../assets/restaurant.jpg'),
+    tags: tags3,
   },
 ]
 
@@ -112,7 +134,7 @@ export const companies = (
 ) => {
   switch (action.type) {
     case Actions.GET_COMPANIES:
-      return [...state]
+      return state
     default:
       return state
   }

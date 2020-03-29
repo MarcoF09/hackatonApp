@@ -1,4 +1,6 @@
-export interface Companies {
+import { ImageSourcePropType } from 'react-native'
+
+export interface Company {
   id: number
   name: string
   address: string
@@ -8,4 +10,6 @@ export interface Companies {
   instagramUrl: string
   facebookUrl: string
   category: string
+  tags: strings[]
+  image: ImageSourcePropType
 }
