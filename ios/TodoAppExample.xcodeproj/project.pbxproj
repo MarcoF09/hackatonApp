@@ -11,7 +11,7 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		32CAF4CB08995E76BBFF4F20 /* libPods-TodoAppExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3316DC13EA56ACECBE482A0B /* libPods-TodoAppExample.a */; };
+		33E55D2E598C81950FC1479F /* libPods-TodoAppExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC9DE90EC78B77E79D38A59 /* libPods-TodoAppExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +25,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TodoAppExample/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TodoAppExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TodoAppExample/main.m; sourceTree = "<group>"; };
-		3316DC13EA56ACECBE482A0B /* libPods-TodoAppExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodoAppExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8664C0DD412C52175D859052 /* Pods-TodoAppExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppExample.production.xcconfig"; path = "Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample.production.xcconfig"; sourceTree = "<group>"; };
-		CA11F821A272D796E4020F7F /* Pods-TodoAppExample.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppExample.dev.xcconfig"; path = "Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample.dev.xcconfig"; sourceTree = "<group>"; };
-		D3D5B02712D0DD7633D6DDF6 /* Pods-TodoAppExample.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppExample.staging.xcconfig"; path = "Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample.staging.xcconfig"; sourceTree = "<group>"; };
+		3AC9DE90EC78B77E79D38A59 /* libPods-TodoAppExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodoAppExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C8C5C89644748BD38216728 /* Pods-TodoAppExample.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppExample.staging.xcconfig"; path = "Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample.staging.xcconfig"; sourceTree = "<group>"; };
+		941B1D95D2FA54FFBA16C073 /* Pods-TodoAppExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppExample.production.xcconfig"; path = "Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample.production.xcconfig"; sourceTree = "<group>"; };
+		9B9008F3B4EEFB01228417B3 /* Pods-TodoAppExample.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppExample.dev.xcconfig"; path = "Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample.dev.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32CAF4CB08995E76BBFF4F20 /* libPods-TodoAppExample.a in Frameworks */,
+				33E55D2E598C81950FC1479F /* libPods-TodoAppExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +81,7 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				3316DC13EA56ACECBE482A0B /* libPods-TodoAppExample.a */,
+				3AC9DE90EC78B77E79D38A59 /* libPods-TodoAppExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,9 +119,9 @@
 		DF3F4EA44298187BF973A068 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CA11F821A272D796E4020F7F /* Pods-TodoAppExample.dev.xcconfig */,
-				8664C0DD412C52175D859052 /* Pods-TodoAppExample.production.xcconfig */,
-				D3D5B02712D0DD7633D6DDF6 /* Pods-TodoAppExample.staging.xcconfig */,
+				9B9008F3B4EEFB01228417B3 /* Pods-TodoAppExample.dev.xcconfig */,
+				941B1D95D2FA54FFBA16C073 /* Pods-TodoAppExample.production.xcconfig */,
+				3C8C5C89644748BD38216728 /* Pods-TodoAppExample.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -133,7 +133,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TodoAppExample" */;
 			buildPhases = (
-				98D8289E4EA65984CC305515 /* [CP] Check Pods Manifest.lock */,
+				0276745B85295941235E8438 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -210,7 +210,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		98D8289E4EA65984CC305515 /* [CP] Check Pods Manifest.lock */ = {
+		0276745B85295941235E8438 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,7 +280,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA11F821A272D796E4020F7F /* Pods-TodoAppExample.dev.xcconfig */;
+			baseConfigurationReference = 9B9008F3B4EEFB01228417B3 /* Pods-TodoAppExample.dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDev;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -304,7 +304,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8664C0DD412C52175D859052 /* Pods-TodoAppExample.production.xcconfig */;
+			baseConfigurationReference = 941B1D95D2FA54FFBA16C073 /* Pods-TodoAppExample.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -472,7 +472,7 @@
 		};
 		CB9880302416E9C200CA4C16 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3D5B02712D0DD7633D6DDF6 /* Pods-TodoAppExample.staging.xcconfig */;
+			baseConfigurationReference = 3C8C5C89644748BD38216728 /* Pods-TodoAppExample.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDev;
 				CODE_SIGN_IDENTITY = "Apple Development";
